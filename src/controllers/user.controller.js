@@ -69,7 +69,7 @@ const register = async (req, res) => {
       const insertUser = await newUser.save();
 
       console.log("Registration Successful");
-      res.render("login");
+      res.redirect("/");
       // return successResponse(req, res, insertUser, 200);
     }
   } catch (error) {
