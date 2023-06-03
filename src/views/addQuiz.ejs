@@ -1,0 +1,480 @@
+<html>
+
+<head>
+  <%- include('../views/partials/links'); %>
+    <link rel="stylesheet" href="/css/validation.css" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-primary navbar-light">
+      <div class="container mt-1">
+        <h2 class="text-white">QUIZZY</h2>
+        <button class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapsenavbar">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+    
+        <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item px-2">
+              <a href="/home" class="nav-link text-white"> HOME </a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="/all" class="nav-link text-white"> ALL QUIZZES </a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="/addquiz" class="nav-link text-white"> ADD QUIZ </a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="/profile" class="nav-link text-white"> PROFILE </a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="/logout" class="nav-link text-white"> LOGOUT </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+                    <!-- page content -->
+                    <div class="container mt-4">
+                    
+                      <div class="d-flex justify-content-center">
+                        <form class="mt-3 col-md-8" id="addquiz" action="/addquiz" method="post">
+
+                          
+                            <div class="form-group mt-4 mb-4">
+                              <div class="container">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                              </div>
+                            </div>
+                          <hr>
+
+                          <!-- Question 1 -->
+                          <div class="form-group mt-4">
+                            <div class="container ">
+                              <input type="text" class="form-control" id="q1" name="que1" placeholder="Question 1">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <div class="container ">
+                              <div class="row mx-md-n2">
+                                <div class="col px-md-2">
+                                  <input type="text" class="form-control" id="q1o1" name="q1o1" placeholder="Option A">
+                                  <input type="text" class="form-control mt-2" id="q1o2" name="q1o2" placeholder="Option C">
+                                </div>
+                                <div class="col px-2">
+                                  <input type="text" class="form-control" id="q1o3" name="q1o3" placeholder="Option B">
+                                  <input type="text" class="form-control mt-2" id="q1o4" name="q1o4" placeholder="Option D" class="mt-1">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  
+                        <div class="form-group mb-4">
+                          <div class="container">
+                            <input type="text" class="form-control" name="ans1" placeholder="Answer">
+                          </div>
+                        </div>
+                    <hr>
+
+                          <!-- Question 2 -->
+                          <div class="form-group mt-4">
+                            <div class="container ">
+                              <input type="text" class="form-control" name="que2" placeholder="Question 2">
+                            </div>
+                          </div>
+                          
+                          <div class="form-group">
+                            <div class="container ">
+                              <div class="row mx-md-n2">
+                                <div class="col px-md-2">
+                                  <input type="text" class="form-control" name="q2o1" placeholder="Option A">
+                                  <input type="text" class="form-control mt-2" name="q2o2" placeholder="Option C">
+                                </div>
+                                <div class="col px-2">
+                                  <input type="text" class="form-control" name="q2o3" placeholder="Option B">
+                                  <input type="text" class="form-control mt-2" name="q2o4" placeholder="Option D">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="form-group mb-4">
+                            <div class="container">
+                              <input type="text" class="form-control" name="ans2" placeholder="Answer">
+                            </div>
+                          </div>
+                          <hr>
+
+                        <!-- Question 3 -->
+                        <div class="form-group mt-4">
+                          <div class="container ">
+                            <input type="text" class="form-control" name="que3" placeholder="Question 3">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="container ">
+                            <div class="row mx-md-n2">
+                              <div class="col px-md-2">
+                                <input type="text" class="form-control" name="q3o1" placeholder="Option A">
+                                <input type="text" class="form-control mt-2" name="q3o2" placeholder="Option C">
+                              </div>
+                              <div class="col px-2">
+                                <input type="text" class="form-control" name="q3o3" placeholder="Option B">
+                                <input type="text" class="form-control mt-2" name="q3o4" placeholder="Option D">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group mb-4">
+                          <div class="container">
+                            <input type="text" class="form-control" name="ans3" placeholder="Answer">
+                          </div>
+                        </div>
+                        <hr>
+                          
+                        <!-- Question 4 -->
+                        <div class="form-group mt-4">
+                          <div class="container ">
+                            <input type="text" class="form-control" name="que4" placeholder="Question 4">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="container ">
+                            <div class="row mx-md-n2">
+                              <div class="col px-md-2">
+                                <input type="text" class="form-control" name="q4o1" placeholder="Option A">
+                                <input type="text" class="form-control mt-2" name="q4o2" placeholder="Option C">
+                              </div>
+                              <div class="col px-2">
+                                <input type="text" class="form-control" name="q4o3" placeholder="Option B">
+                                <input type="text" class="form-control mt-2" name="q4o4" placeholder="Option D">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group mb-4">
+                          <div class="container">
+                            <input type="text" class="form-control" name="ans4" placeholder="Answer">
+                          </div>
+                        </div>
+                        <hr>
+                    
+<!-- Question 5 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que5" placeholder="Question 5">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q5o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q5o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q5o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q5o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans5" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 6 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que6" placeholder="Question 6">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q6o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q6o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q6o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q6o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans6" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 7 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que7" placeholder="Question 7">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q7o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q7o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q7o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q7o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans7" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 8 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que8" placeholder="Question 8">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q8o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q8o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q8o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q8o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans8" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 9 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que9" placeholder="Question 9">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q9o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q9o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q9o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q9o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans9" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 10 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que10" placeholder="Question 10">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q10o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q10o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q10o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q10o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans10" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 11 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que11" placeholder="Question 11">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q11o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q11o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q11o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q11o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans11" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 12 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que12" placeholder="Question 12">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q12o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q12o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q12o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q12o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans12" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 13 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que13" placeholder="Question 13">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q13o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q13o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q13o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q13o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans13" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 14 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que14" placeholder="Question 14">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q14o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q14o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q14o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q14o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans14" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+<!-- Question 15 -->
+<div class="form-group mt-4">
+  <div class="container ">
+    <input type="text" class="form-control" name="que15" placeholder="Question 15">
+  </div>
+</div>
+<div class="form-group">
+  <div class="container ">
+    <div class="row mx-md-n2">
+      <div class="col px-md-2">
+        <input type="text" class="form-control" name="q15o1" placeholder="Option A">
+        <input type="text" class="form-control mt-2" name="q15o2" placeholder="Option C">
+      </div>
+      <div class="col px-2">
+        <input type="text" class="form-control" name="q15o3" placeholder="Option B">
+        <input type="text" class="form-control mt-2" name="q15o4" placeholder="Option D">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group mb-4">
+  <div class="container">
+    <input type="text" class="form-control" name="ans15" placeholder="Answer">
+  </div>
+</div>
+<hr>
+
+                          <div class="form-group mt-5">
+                            <div class="container d-flex justify-content-center ">
+                              <input type="submit" class="btn btn-primary btn-info mt-2 mr-5" value="SUBMIT">
+                              <button class="btn btn-danger mt-2 ml-2"><a href="/home" class="text-light"> CANCEL </a></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+</body>
+
+</html>
