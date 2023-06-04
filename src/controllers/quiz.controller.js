@@ -143,7 +143,8 @@ const addQuiz = async (req, res) => {
       const payload = {
         userId: userId,
         title: req.body.title,
-        question : question
+        question : question,
+        duration : Number(duration),
       };
 
       // register new user

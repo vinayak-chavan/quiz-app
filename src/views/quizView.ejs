@@ -96,7 +96,7 @@
         submitButton.disabled = true;
         alert("Sorry!! Time is over");
       }
-      setTimeout(disableSubmitButton, 15 * 60 * 1000);
+      setTimeout(disableSubmitButton, '<%= quiz.duration %>' * 60 * 1000);
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
