@@ -10,6 +10,7 @@ const {
   addQuizView,
   addQuiz,
   quizStats,
+  myQuiz,
 } = require('../controllers/quiz.controller');
 
 const route = express.Router();
@@ -17,6 +18,7 @@ const route = express.Router();
 route.get('/home', auth, homeView);
 route.get('/all', auth, allView);
 route.get('/quiz/:id', auth, quizView);
+route.get('/hosted', auth, myQuiz);
 route.get('/level/:title', auth, levelQuizView);
 route.post('/quizSubmit', auth, quizSubmit);
 route.get('/addquiz', auth, addQuizView);

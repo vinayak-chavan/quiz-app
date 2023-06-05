@@ -4,8 +4,20 @@ const { successResponse, errorResponse } = require("../utils");
 
 const allView = async (req, res) => {
   try {
-    const quizData = await quiz.find({ prebuilt: false });
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const quizData = await quiz.find({ prebuilt: false, date: { $gte: today, $lt: new Date(today.getTime() + 24 * 60 * 60 * 1000) } });
     res.render("allQuiz", { quizes: quizData });
+  } catch (error) {
+    return errorResponse(req, res, "something went wrong", 400);
+  }
+};
+
+const myQuiz = async (req, res) => {
+  try {
+    let userId = req.user._id;
+    const quizData = await quiz.find({ prebuilt: false, userId: userId });
+    res.render("myQuiz", { quizes: quizData });
   } catch (error) {
     return errorResponse(req, res, "something went wrong", 400);
   }
@@ -14,7 +26,8 @@ const allView = async (req, res) => {
 const homeView = async (req, res) => {
   try {
     const quizData = await quiz.find({ prebuilt: true, level: 1 });
-    res.render("home", { quizes: quizData });
+    let obj = {message: ' '};
+    res.render("home", { quizes: quizData, obj: obj });
   } catch (error) {
     return errorResponse(req, res, "something went wrong", 400);
   }
@@ -144,6 +157,7 @@ const addQuiz = async (req, res) => {
         userId: userId,
         title: req.body.title,
         question : question,
+        date: date,
         duration : Number(duration),
       };
 
@@ -237,5 +251,6 @@ module.exports = {
   addQuizView,
   addQuiz,
   allView,
-  quizStats,
+  quizStats, 
+  myQuiz,
 };

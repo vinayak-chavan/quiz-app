@@ -34,7 +34,9 @@ const login = async (req, res) => {
         res.cookie("accessToken", accessToken);
         await userData.save();
 
-        res.redirect("/home");
+        const quizData = await quiz.find({ prebuilt: true, level: 1 });
+        let obj = {message: 'Login Successful'};
+        res.render("home", { quizes: quizData, obj: obj });
         
         // return successResponse(req, res, accessToken, 200);
       }
@@ -69,6 +71,14 @@ const register = async (req, res) => {
       const insertUser = await newUser.save();
 
       console.log("Registration Successful");
+
+      sendmail(
+        emailID,
+        "Registration Successfull",
+        ` <p> Hello </p><strong> ${userName}, </strong> </br>
+          <p> You have been successfully registered on Quizlly.</p>
+          <p> Thank You!!</p>`
+      );
       res.redirect("/");
       // return successResponse(req, res, insertUser, 200);
     }

@@ -33,7 +33,11 @@ const QuizSchema = new mongoose.Schema({
   level: {
     type: Number,
     default: 1,
-  }
+  },
+  date: {
+    type: Date,
+    trim: true,
+  },
 });
 
 const quiz = new mongoose.model('quiz', QuizSchema);

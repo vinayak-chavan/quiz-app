@@ -15,11 +15,10 @@
   <nav class="navbar navbar-expand-lg bg-primary navbar-light">
     <div class="container mt-1">
       <h2 class="text-white">QUIZZY</h2>
-      <button class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse"
-        data-target="#collapsenavbar">
+      <button class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapsenavbar">
         <span class="navbar-toggler-icon "></span>
       </button>
-
+  
       <div class="collapse navbar-collapse text-center" id="collapsenavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item px-2">
@@ -30,6 +29,9 @@
           </li>
           <li class="nav-item px-2">
             <a href="/addquiz" class="nav-link text-white"> ADD QUIZ </a>
+          </li>
+          <li class="nav-item px-2">
+            <a href="/hosted" class="nav-link text-white"> MY HOSTED </a>
           </li>
           <li class="nav-item px-2">
             <a href="/profile" class="nav-link text-white"> PROFILE </a>
@@ -63,9 +65,6 @@
                 
                   <div class="d-flex justify-content-center">
                     <button class="btn btn-primary mt-2 ml-2"><a href="/quiz/<%= quiz._id %>" class="text-light">START</a></button>
-                    <button class="btn btn-danger mt-2 ml-2"><a href="/stats/<%= quiz._id %>" class="text-light"> <i class="fa fa-list"
-                          style="font-size:20px"></i> </a></button>
-
                   </div>
                 </div>
 
