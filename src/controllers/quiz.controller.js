@@ -175,6 +175,12 @@ const quizView = async (req, res) => {
   try {
     const quizId = req.params.id;
     const quizData = await quiz.findOne({ _id: quizId });
+    
+    for (let i = quizData.question.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [quizData.question[i], quizData.question[j]] = [quizData.question[j], quizData.question[i]];      
+    }
+    
     res.render("quizView", { quiz: quizData });
   } catch (error) {
     return errorResponse(req, res, "something went wrong", 400);
