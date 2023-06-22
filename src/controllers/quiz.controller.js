@@ -232,17 +232,30 @@ const quizSubmit = async (req, res) => {
 
 const quizStats = async (req, res) => {
   try {
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    
+    }
     let array = [];
     const quizId = req.params.id;
     const quizData = await quiz.findOne({_id: quizId});
-    quizData.result.forEach(async(ele) => {
-      let userData = await quiz.findById(ele._id);
-      let obj = {};
-      obj.name = userData.userName;
-      obj.marks = ele.result;
-      array.push(obj);
-    });
-    res.render("statPage", { profile: array });
+
+      quizData.result.forEach(async(ele) => {
+        let userData = await user.findOne({_id: ele._id});
+        let obj = {};
+        obj.name = userData.userName;
+        obj.marks = ele.result;
+        array.push(obj);
+      });
+    
+      
+
+    await sleep(5000);
+    await res.render("statPage", { profile: array });
+      // function(error) {myDisplayer(error);}
+    
+    // await res.render("statPage", { profile: array });
+    
   } catch (error) {
     console.log(error.message);
     return errorResponse(req, res, "something went wrong", 400);

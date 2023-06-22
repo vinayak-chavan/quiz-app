@@ -17,7 +17,7 @@ const QuizSchema = new mongoose.Schema({
   },
   duration: {
     type: Number,
-    default: 15,
+    required: true,
   },
   marks: {
     type: Number,
