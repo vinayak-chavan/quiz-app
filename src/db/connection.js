@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 // const url = "mongodb://localhost:27017/quizzy?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false";
-const url = "mongodb+srv://chavanvinayak017:quizzy@cluster0.iwx9beo.mongodb.net/";
+// const url = "mongodb+srv://chavanvinayak017:quizzy@cluster0.iwx9beo.mongodb.net/";
+const url - "mongodb+srv://quizzy:quizzy@cluster0.rguq1di.mongodb.net/";
 
 (async () => {
   try {
